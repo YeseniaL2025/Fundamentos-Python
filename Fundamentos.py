@@ -1,5 +1,9 @@
+def nuevoTema(tema):
+    print("\n-----", tema, "-----\n")
+
 if __name__ == "__main__":
-    print(".....Operadores aritméticos.....")
+    
+    nuevoTema("Operadores Ariméticos")
 # Suma
     print("Operador suma, 5 + 6 =", 5 + 6)
 # Resta
@@ -27,7 +31,7 @@ if __name__ == "__main__":
     print("Operador NOT: not True =", not a)
     print("Operador NOT: not False =", not b)
 
-    #1. Hacer las tablas de verdad
+    #TAREA 1. Hacer las tablas de verdad
         # Tabla de verdad para AND
     print("Tabla de verdad: AND")
     print("A\tB\tA and B")
@@ -37,7 +41,7 @@ if __name__ == "__main__":
     print("False\tFalse\t", False and False)
     print()
 
-# Tabla de verdad para OR
+        # Tabla de verdad para OR
     print("Tabla de verdad: OR")
     print("A\tB\tA or B")
     print("True\tTrue\t", True or True)
@@ -46,13 +50,13 @@ if __name__ == "__main__":
     print("False\tFalse\t", False or False)
     print()
 
-# Tabla de verdad para NOT
+        # Tabla de verdad para NOT
     print("Tabla de verdad: NOT")
     print("A\tnot A")
     print("True\t", not True)
     print("False\t", not False)
 
-    #2. 1 ejemplo de cada operador de comparación.
+    #2 TAREA 1. ejemplo de cada operador de comparación.
     print(".....Operadores de comparación.....")
 
 # Igual a
@@ -72,4 +76,6 @@ if __name__ == "__main__":
 
 # Menor o igual que
     print("4 <= 9 →", 4 <= 9)  # True
+
+print(".....Variables.....")
 
