@@ -28,7 +28,29 @@ if __name__ == "__main__":
     print("Operador NOT: not False =", not b)
 
     #1. Hacer las tablas de verdad
+        # Tabla de verdad para AND
+    print("Tabla de verdad: AND")
+    print("A\tB\tA and B")
+    print("True\tTrue\t", True and True)
+    print("True\tFalse\t", True and False)
+    print("False\tTrue\t", False and True)
+    print("False\tFalse\t", False and False)
+    print()
 
+# Tabla de verdad para OR
+    print("Tabla de verdad: OR")
+    print("A\tB\tA or B")
+    print("True\tTrue\t", True or True)
+    print("True\tFalse\t", True or False)
+    print("False\tTrue\t", False or True)
+    print("False\tFalse\t", False or False)
+    print()
+
+# Tabla de verdad para NOT
+    print("Tabla de verdad: NOT")
+    print("A\tnot A")
+    print("True\t", not True)
+    print("False\t", not False)
 
     #2. 1 ejemplo de cada operador de comparación.
     print(".....Operadores de comparación.....")
