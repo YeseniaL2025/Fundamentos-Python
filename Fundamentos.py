@@ -94,3 +94,16 @@ print(c)
 
 nombre_variable = "Adios"
 print(nombre_variable)
+
+nuevoTema("Enteros")
+w=103
+x=32322
+y=-58
+z=0b01011100
+h=0xFF
+
+print(w, type(w))
+print(x, type(x))
+print(y, type(y))
+print(z, type(z))
+print(h, type(h))
