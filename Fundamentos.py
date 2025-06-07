@@ -113,3 +113,15 @@ x=12134.56
 print(x, type(x))
 y=-0.43423
 print(y, type(y))
+
+nuevoTema("Números complejos")
+          
+x=-123j
+y=12+54j
+z=3j
+c=y+z
+
+print(x, type(x))
+print(y, type(y))
+print(z, type(y)) 
+print(c, type(c))     
