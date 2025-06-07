@@ -155,6 +155,27 @@ print(conjunto)
 print (50 in conjunto)
 
 nuevoTema("Diccionarios")
-diccionario={"Nombre":"Luna", "Teléfono": 2344343432}
+diccionario={"Nombre":"Luna", "Teléfono": 2344343432,90:4+3}
 print(diccionario)
 print(diccionario["Teléfono"])
+print(diccionario[90])
+
+nuevoTema("Cadenas")
+cadena1="Esto es una cadena"
+cadena2='Esto es una cadena'
+cadena_multilinea='''esto es una cadena 
+de varias
+lineas con tabuladores
+saltos de 
+línea'''
+print(cadena1, type(cadena1))
+print(cadena2, type(cadena2))
+print(cadena_multilinea, type(cadena_multilinea))
+
+cadena3= "Hola"*5
+print(cadena3)
+print(cadena1[2])
+print(cadena1[2:10])
+print(cadena1[:5])
+print(cadena1[5:])
+print(cadena1[::-1])
