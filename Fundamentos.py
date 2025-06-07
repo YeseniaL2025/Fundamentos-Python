@@ -107,3 +107,9 @@ print(x, type(x))
 print(y, type(y))
 print(z, type(z))
 print(h, type(h))
+
+nuevoTema("Flotantes")
+x=12134.56
+print(x, type(x))
+y=-0.43423
+print(y, type(y))
