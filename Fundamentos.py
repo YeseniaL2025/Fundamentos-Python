@@ -1,5 +1,6 @@
 def nuevoTema(tema):
-    print("\n-----", tema, "-----\n")
+    print("\n-----", {tema}, "-----\n")
+
 
 if __name__ == "__main__":
     
@@ -19,7 +20,7 @@ if __name__ == "__main__":
 # Exponente
     print("Operador exponente, 2 ** 3 =", 2 ** 3)
 
-    print(".....Operadores lógicos.....")
+    nuevoTema(".....Operadores lógicos.....")
 # Variables de ejemplo
     a = True
     b = False
@@ -33,6 +34,7 @@ if __name__ == "__main__":
 
     #TAREA 1. Hacer las tablas de verdad
         # Tabla de verdad para AND
+    nuevoTema(".....Tablas de Verdad.....")
     print("Tabla de verdad: AND")
     print("A\tB\tA and B")
     print("True\tTrue\t", True and True)
@@ -57,7 +59,7 @@ if __name__ == "__main__":
     print("False\t", not False)
 
     #2 TAREA 1. ejemplo de cada operador de comparación.
-    print(".....Operadores de comparación.....")
+    nuevoTema(".....Operadores de comparación.....")
 
 # Igual a
     print("5 == 5 →", 5 == 5)  # True
@@ -77,5 +79,18 @@ if __name__ == "__main__":
 # Menor o igual que
     print("4 <= 9 →", 4 <= 9)  # True
 
-print(".....Variables.....")
+nuevoTema(".....Variables.....")
+variable1=10
+_variable2=6.2547
+variable3="Pepe"
+nombreVariable=8
+nombre_variable=34.2
+print(variable1, _variable2, variable3, nombreVariable, nombre_variable)
 
+a, b, c = 5, 10, 8
+print(a)
+print(b)
+print(c)
+
+nombre_variable = "Adios"
+print(nombre_variable)
