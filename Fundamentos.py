@@ -124,4 +124,8 @@ c=y+z
 print(x, type(x))
 print(y, type(y))
 print(z, type(y)) 
-print(c, type(c))     
+print(c, type(c)) 
+
+nuevoTema("Booleanos")
+x=True
+print(x, type(x))
