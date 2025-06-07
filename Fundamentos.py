@@ -148,3 +148,13 @@ nuevoTema("Tuplas")
 tupla=(25, "Tupla", 1+10)
 print(tupla)
 print(tupla[1])
+
+nuevoTema("Conjunto")
+conjunto={1, 20, 30, 40, 50}
+print(conjunto)
+print (50 in conjunto)
+
+nuevoTema("Diccionarios")
+diccionario={"Nombre":"Luna", "Teléfono": 2344343432}
+print(diccionario)
+print(diccionario["Teléfono"])
