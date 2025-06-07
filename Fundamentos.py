@@ -1,5 +1,5 @@
 def nuevoTema(tema):
-    print("\n-----", {tema}, "-----\n")
+    print("\n-----", tema, "-----\n")
 
 
 if __name__ == "__main__":
@@ -129,3 +129,17 @@ print(c, type(c))
 nuevoTema("Booleanos")
 x=True
 print(x, type(x))
+
+nuevoTema("Listas")
+lista=[10,20,5, "Listas de Python"]
+print(lista)
+print(lista[1])
+lista[0]="Hola"
+lista.append(34)
+print(lista)
+lista.insert(0,1.1)
+print(lista)
+lista.append([3,4,5,6,7,8])
+print(lista)
+print(lista[6])
+print(lista[6][4])
