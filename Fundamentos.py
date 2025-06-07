@@ -143,3 +143,8 @@ lista.append([3,4,5,6,7,8])
 print(lista)
 print(lista[6])
 print(lista[6][4])
+
+nuevoTema("Tuplas")
+tupla=(25, "Tupla", 1+10)
+print(tupla)
+print(tupla[1])
