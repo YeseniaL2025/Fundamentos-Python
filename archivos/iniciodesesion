@@ -1,0 +1,48 @@
+import tkinter as tk
+from tkinter import ttk
+from tkinter import messagebox
+
+# Función para validar usuario y contraseña
+def iniciar_sesion():
+    usuario = entrada_usuario.get()
+    contrasena = entrada_contrasena.get()
+
+    
+    usuario_valido = "Yesenia"
+    contrasena_valida = "123456"
+
+    if usuario == usuario_valido and contrasena == contrasena_valida:
+        messagebox.showinfo("Acceso permitido", f"Bienvenido, {usuario}!")
+        
+    else:
+        messagebox.showerror("Acceso denegado", "Usuario o contraseña incorrectos")
+
+# Ventana principal
+raiz = tk.Tk()
+raiz.title("Inicio de sesión")
+raiz.geometry("300x150")
+
+# Frame principal
+marco = ttk.Frame(raiz, padding="10")
+marco.grid(column=0, row=0, sticky=(tk.W, tk.E, tk.N, tk.S))
+
+# Etiqueta y campo para usuario
+ttk.Label(marco, text="Usuario:").grid(column=0, row=2, sticky=tk.W)
+entrada_usuario = ttk.Entry(marco, width=25)
+entrada_usuario.grid(column=1, row=0)
+
+# Etiqueta y campo para contraseña
+ttk.Label(marco, text="Contraseña:").grid(column=0, row=1, sticky=tk.W)
+entrada_contrasena = ttk.Entry(marco, width=25, show="*")
+entrada_contrasena.grid(column=1, row=1)
+
+# Botón para iniciar sesión
+ttk.Button(marco, text="Iniciar sesión", command=iniciar_sesion).grid(column=0, row=2, columnspan=2, pady=10)
+
+# Enfocar el campo de usuario al iniciar
+entrada_usuario.focus()
+
+# Permitir iniciar sesión presionando Enter
+raiz.bind('<Return>', lambda event: iniciar_sesion())
+
+raiz.mainloop()
