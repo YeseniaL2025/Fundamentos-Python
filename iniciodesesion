@@ -27,7 +27,7 @@ marco = ttk.Frame(raiz, padding="10")
 marco.grid(column=0, row=0, sticky=(tk.W, tk.E, tk.N, tk.S))
 
 # Etiqueta y campo para usuario
-ttk.Label(marco, text="Usuario:").grid(column=0, row=2, sticky=tk.W)
+ttk.Label(marco, text="Usuario:").grid(column=0, row=0, sticky=tk.W)
 entrada_usuario = ttk.Entry(marco, width=25)
 entrada_usuario.grid(column=1, row=0)
 
