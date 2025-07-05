@@ -30,7 +30,6 @@ def guardar():
             writer.writerow(["Nombre", "A. Paterno", "A. Materno", "Correo", "Móvil", "Ocupación", "Estado", "Aficiones"])
         writer.writerow([nombre, ap_paterno, ap_materno, correo, movil, ocupacion, estado, aficiones_str])
 
-    # Limpiar campos
     nombre_var.set("")
     ap_paterno_var.set("")
     ap_materno_var.set("")
@@ -45,13 +44,11 @@ def guardar():
 def cancelar():
     raiz.destroy()
 
-# --------- INTERFAZ PRINCIPAL ----------
 raiz = Tk()
 raiz.title("Formulario de datos")
 raiz.geometry("600x300")
 raiz.resizable(False, False)
 
-# Variables
 ocupacion_var = StringVar(value="No especificado")
 estado_var = StringVar()
 nombre_var = StringVar()
@@ -73,7 +70,6 @@ estados_mexico = (
     "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatán", "Zacatecas"
 )
 
-# Frame del formulario
 frame_formulario = Frame(raiz)
 frame_formulario.grid(row=0, column=0, padx=10, pady=10)
 
@@ -100,13 +96,11 @@ Checkbutton(frame_aficiones, text="Leer", variable=aficion_leer).pack(side=LEFT,
 Checkbutton(frame_aficiones, text="Música", variable=aficion_musica).pack(side=LEFT, padx=5)
 Checkbutton(frame_aficiones, text="Videojuegos", variable=aficion_videojuegos).pack(side=LEFT, padx=5)
 
-# Botones
 frame_botones = Frame(raiz)
 frame_botones.grid(row=2, column=0, columnspan=2, pady=(10, 10))
 ttk.Button(frame_botones, text="Guardar", command=guardar).pack(side=LEFT, padx=10)
 ttk.Button(frame_botones, text="Cancelar", command=cancelar).pack(side=LEFT, padx=10)
 
-# Frame lateral (ocupación y estado)
 frame_lateral = Frame(raiz)
 frame_lateral.grid(row=0, column=1, padx=10, pady=10, sticky=N)
 
@@ -119,5 +113,4 @@ combo_estados = ttk.Combobox(frame_lateral, textvariable=estado_var, values=esta
 combo_estados.pack(anchor=W, pady=5)
 combo_estados.current(0)
 
-# Ejecutar ventana
 raiz.mainloop()
