@@ -1,8 +1,9 @@
 from tkinter import *
 from tkinter import ttk
+import os
+import csv
 
 def guardar():
-    # Leer datos del formulario
     nombre = nombre_var.get()
     ap_paterno = ap_paterno_var.get()
     ap_materno = ap_materno_var.get()
@@ -20,28 +21,31 @@ def guardar():
         aficiones.append("Videojuegos")
     aficiones_str = ", ".join(aficiones)
 
-    # Crear ventana emergente
-    ventana = Toplevel(raiz)
-    ventana.title("Widgets")
-    ventana.geometry("500x250")
+    archivo = "datos.csv"
+    nuevo_archivo = not os.path.exists(archivo)
 
-    # Tabla en ventana emergente
-    columnas = ("Nombre", "A. Paterno", "A. Materno", "Correo", "Móvil", "Ocupación", "Estado", "Aficiones")
-    tree = ttk.Treeview(ventana, columns=columnas, show="headings")
+    with open(archivo, mode="a", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        if nuevo_archivo:
+            writer.writerow(["Nombre", "A. Paterno", "A. Materno", "Correo", "Móvil", "Ocupación", "Estado", "Aficiones"])
+        writer.writerow([nombre, ap_paterno, ap_materno, correo, movil, ocupacion, estado, aficiones_str])
 
-    for col in columnas:
-        tree.heading(col, text=col)
-        tree.column(col, width=100)
-
-    tree.pack(fill=BOTH, expand=True, padx=10, pady=10)
-
-    # Insertar datos
-    tree.insert("", "end", values=(nombre, ap_paterno, ap_materno, correo, movil, ocupacion, estado, aficiones_str))
+    # Limpiar campos
+    nombre_var.set("")
+    ap_paterno_var.set("")
+    ap_materno_var.set("")
+    correo_var.set("")
+    movil_var.set("")
+    ocupacion_var.set("No especificado")
+    estado_var.set(estados_mexico[0])
+    aficion_leer.set(False)
+    aficion_musica.set(False)
+    aficion_videojuegos.set(False)
 
 def cancelar():
     raiz.destroy()
 
-# Crear ventana principal
+# --------- INTERFAZ PRINCIPAL ----------
 raiz = Tk()
 raiz.title("Formulario de datos")
 raiz.geometry("600x300")
@@ -60,7 +64,6 @@ aficion_leer = BooleanVar()
 aficion_musica = BooleanVar()
 aficion_videojuegos = BooleanVar()
 
-# Lista de estados de México
 estados_mexico = (
     "Aguascalientes", "Baja California", "Baja California Sur", "Campeche",
     "Coahuila", "Colima", "Chiapas", "Chihuahua", "CDMX", "Durango",
@@ -74,7 +77,6 @@ estados_mexico = (
 frame_formulario = Frame(raiz)
 frame_formulario.grid(row=0, column=0, padx=10, pady=10)
 
-# Campos del formulario
 ttk.Label(frame_formulario, text="Nombre:").grid(row=0, column=0, padx=5, pady=5, sticky=E)
 ttk.Entry(frame_formulario, textvariable=nombre_var).grid(row=0, column=1, padx=5, pady=5)
 
@@ -90,7 +92,6 @@ ttk.Entry(frame_formulario, textvariable=correo_var).grid(row=3, column=1, padx=
 ttk.Label(frame_formulario, text="Móvil:").grid(row=4, column=0, padx=5, pady=5, sticky=E)
 ttk.Entry(frame_formulario, textvariable=movil_var).grid(row=4, column=1, padx=5, pady=5)
 
-# Aficiones
 ttk.Label(frame_formulario, text="Aficiones:").grid(row=5, column=0, padx=5, pady=(10, 0), sticky=E)
 frame_aficiones = Frame(frame_formulario)
 frame_aficiones.grid(row=5, column=1, padx=5, pady=(10, 0), sticky=W)
@@ -105,7 +106,7 @@ frame_botones.grid(row=2, column=0, columnspan=2, pady=(10, 10))
 ttk.Button(frame_botones, text="Guardar", command=guardar).pack(side=LEFT, padx=10)
 ttk.Button(frame_botones, text="Cancelar", command=cancelar).pack(side=LEFT, padx=10)
 
-# Frame lateral para ocupación y estado
+# Frame lateral (ocupación y estado)
 frame_lateral = Frame(raiz)
 frame_lateral.grid(row=0, column=1, padx=10, pady=10, sticky=N)
 
@@ -118,5 +119,5 @@ combo_estados = ttk.Combobox(frame_lateral, textvariable=estado_var, values=esta
 combo_estados.pack(anchor=W, pady=5)
 combo_estados.current(0)
 
-# Ejecutar
+# Ejecutar ventana
 raiz.mainloop()
