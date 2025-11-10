@@ -6,7 +6,7 @@ t.speed(3)
 
 for i in range(3):
     t.penup()
-    t.goto(0, 3)         
+    t.goto(0, 0)         
     t.setheading(45)    
     t.right(i * 25)    
     t.pendown()
